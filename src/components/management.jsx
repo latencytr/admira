@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Route, Redirect, Switch, BrowserRouter } from "react-router-dom";
 import Register from "./register";
 import ListGroup from "./common/listGroup";
 
