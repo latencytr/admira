@@ -23,7 +23,7 @@ code {
   margin: 10px 20px;
 }
 
-hr {
+.mainLayout-hr {
   width: 100%;
   margin: 20px 0px;
 }
@@ -31,4 +31,13 @@ hr {
 .login-form {
   max-width: 400px;
   min-width: 300px;
+}
+
+.tableCellCentered {
+  text-align: center;
+}
+
+.announcement > ul {
+  float: left;
+  margin-left: -2.5em;
 }

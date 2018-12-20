@@ -21,7 +21,10 @@ class TableBody extends React.Component {
         {data.map(item => (
           <tr key={item._id}>
             {columns.map(column => (
-              <td key={this.createKey(item, column)}>
+              <td
+                className="tableCellCentered"
+                key={this.createKey(item, column)}
+              >
                 {this.renderCell(item, column)}
               </td>
             ))}

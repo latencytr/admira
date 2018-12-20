@@ -8,9 +8,15 @@ import "./index.css";
 import App from "./components/app";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSortUp as fasSortUp } from "@fortawesome/free-solid-svg-icons";
-import { faSortDown as fasSortDown } from "@fortawesome/free-solid-svg-icons";
-library.add(fasSortUp, fasSortDown);
+import {
+  faSortUp as fasSortUp,
+  faSortDown as fasSortDown
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faFrown as farFrown,
+  faSmile as farSmile
+} from "@fortawesome/free-regular-svg-icons";
+library.add(fasSortUp, fasSortDown, farFrown, farSmile);
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(

@@ -29,7 +29,7 @@ class TableHeader extends React.Component {
         <tr>
           {this.props.columns.map(column => (
             <th
-              className="clickable"
+              className="clickable tableCellCentered"
               key={column.path || column.key}
               onClick={() => this.raiseSort(column.path)}
             >

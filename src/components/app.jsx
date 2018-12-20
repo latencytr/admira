@@ -4,13 +4,14 @@ import { ToastContainer } from "react-toastify";
 
 import NavBar from "./common/navBar";
 import About from "./about";
-import SitePlan from "./sitePlan";
+import Announcement from "./announcement";
 import Projects from "./projects";
 import Dues from "./dues";
 import Management from "./management";
 import NotFound from "./notFound";
 import LoginForm from "./loginForm";
 import Logout from "./logout";
+import AccountInfo from "./accountInfo";
 import auth from "../services/authService";
 import ProtectedRoute from "./common/protectedRoute";
 
@@ -34,11 +35,14 @@ class App extends Component {
     } else {
       links.push(
         { name: "Hakkında", path: "/about" },
-        { name: "Site Planı", path: "/siteplan" },
-        { name: "Projeler", path: "/projects" },
-        { name: "Aidat", path: "/dues" },
-        { name: "Yönetim", path: "/management" }
+        { name: "Duyurular", path: "/announcement" },
+        { name: "Toplantı Kararları", path: "/projects" },
+        { name: "Hesap Bilgileri", path: "/accountInfo" },
+        { name: "Aidat", path: "/dues" }
       );
+    }
+    if (user && user.isAdmin) {
+      links.push({ name: "Yönetim", path: "/management" });
     }
     return (
       <main>
@@ -55,8 +59,9 @@ class App extends Component {
             <Route path="/login" component={LoginForm} />
             <ProtectedRoute path="/logout" component={Logout} />
             <ProtectedRoute path="/about" component={About} />
-            <ProtectedRoute path="/siteplan" component={SitePlan} />
+            <ProtectedRoute path="/announcement" component={Announcement} />
             <ProtectedRoute path="/projects" component={Projects} />
+            <ProtectedRoute path="/accountInfo" component={AccountInfo} />
             <ProtectedRoute path="/dues" component={Dues} />
             <ProtectedRoute path="/management" component={Management} />
             <Route path="/" exact component={LoginForm} />
