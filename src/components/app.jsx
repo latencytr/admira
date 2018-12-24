@@ -11,6 +11,7 @@ import Management from "./management";
 import NotFound from "./notFound";
 import LoginForm from "./loginForm";
 import Logout from "./logout";
+import ChangePassword from "./changePassword";
 import AccountInfo from "./accountInfo";
 import auth from "../services/authService";
 import ProtectedRoute from "./common/protectedRoute";
@@ -51,13 +52,14 @@ class App extends Component {
           title="Admira Göksu"
           links={links}
           user={user}
-          profile="/profile"
+          changePassword="/changePassword"
           logout="/logout"
         />
         <div className="app">
           <Switch>
             <Route path="/login" component={LoginForm} />
             <ProtectedRoute path="/logout" component={Logout} />
+            <ProtectedRoute path="/changePassword" component={ChangePassword} />
             <ProtectedRoute path="/about" component={About} />
             <ProtectedRoute path="/announcement" component={Announcement} />
             <ProtectedRoute path="/projects" component={Projects} />

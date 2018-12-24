@@ -25,6 +25,18 @@ export async function saveUser(user) {
   }
 }
 
+export async function changePassword(user, password) {
+  const body = {
+    email: user.email,
+    name: user.name,
+    block: user.block,
+    doorNumber: user.doorNumber,
+    isAdmin: user.isAdmin,
+    password: password
+  };
+  return http.put(userUrl(user._id), body);
+}
+
 export async function deleteUser(id) {
   return http.delete(userUrl(id));
 }

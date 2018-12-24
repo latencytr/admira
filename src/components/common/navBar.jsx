@@ -23,7 +23,7 @@ class NavBar extends React.Component {
   };
   render() {
     const { navbarCss, dropDownCss } = this.state;
-    const { user, links, title, profile, logout } = this.props;
+    const { user, links, title, changePassword, logout } = this.props;
     return (
       <div className="row">
         <div className="w-100">
@@ -63,13 +63,13 @@ class NavBar extends React.Component {
                       <div className={`dropdown-menu " + ${dropDownCss}`}>
                         <NavLink
                           className="dropdown-item"
-                          to={profile}
+                          to={changePassword}
                           onClick={() => {
                             this.collapseMenu();
                             this.hideDropDown();
                           }}
                         >
-                          My Profile
+                          Şifre Değiştir
                         </NavLink>
                         <NavLink
                           className="dropdown-item"
@@ -79,7 +79,7 @@ class NavBar extends React.Component {
                             this.hideDropDown();
                           }}
                         >
-                          Logout
+                          Güvenli Çıkış
                         </NavLink>
                       </div>
                     </li>
