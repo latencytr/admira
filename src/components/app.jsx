@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import AdSense from "react-adsense";
 
 import NavBar from "./common/navBar";
 import About from "./about";
@@ -72,6 +73,8 @@ class App extends Component {
             <Redirect to="/not-found" />
           </Switch>
         </div>
+        // ads with no set-up
+        <AdSense.Google client="ca-pub-5743581917741076" slot="7806394673" />
       </main>
     );
   }
