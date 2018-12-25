@@ -28,8 +28,10 @@ class UserForm extends Form {
       .required()
       .label("Email"),
     password: Joi.string()
-      .min(5)
-      .required()
+      .allow("")
+      .min(6)
+      .max(20)
+      .optional()
       .label("Şifre"),
     name: Joi.string()
       .required()
