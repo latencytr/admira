@@ -21,32 +21,26 @@ class Projects extends Component {
                   ve B bloktan en az 2 şer kat malikinin katılımıyla genel
                   kurulu öncesi çalışma yapılması gerekmektedir.
                 </p>
-                <p>
-                  <ol>
-                    <li>
-                      2018 yılı gelir ve giderlerinin denetimi ve raporlanması.
-                      05/01/2019 Cumartesi Saat: 19:00
-                    </li>
-                    <li>
-                      Yapılacak işlerin görüşülmesi. 03/01/2019 Perşembe Saat:
-                      19:00
-                    </li>
-                    <li>
-                      2019 yılı tahmini bütçe hazırlanması. 03/01/2019 Perşembe
-                      Saat: 19:00
-                    </li>
-                    <li>
-                      Doğalgaz ve diğer faturaların dağıtımı. 03/01/2019
-                      Perşembe Saat: 19:00
-                    </li>
-                  </ol>
-                </p>
+                <ol>
+                  <li>
+                    2018 yılı gelir ve giderlerinin denetimi ve raporlanması.
+                    05/01/2019 Cumartesi Saat: 19:00
+                  </li>
+                  <li>
+                    Yapılacak işlerin görüşülmesi. 03/01/2019 Perşembe Saat:
+                    19:00
+                  </li>
+                  <li>
+                    2019 yılı tahmini bütçe hazırlanması. 03/01/2019 Perşembe
+                    Saat: 19:00
+                  </li>
+                  <li>
+                    Doğalgaz ve diğer faturaların dağıtımı. 03/01/2019 Perşembe
+                    Saat: 19:00
+                  </li>
+                </ol>
               </li>
               <hr />
-            </ul>
-          </div>
-          <div className="announcement">
-            <ul>
               <li>
                 <h3>Kat Malikleri Kurulu Toplantısı - 07/12/2018</h3>
                 <p>
