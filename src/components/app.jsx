@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import Ad from "./ad";
 
 import NavBar from "./common/navBar";
 import About from "./about";
@@ -73,7 +72,6 @@ class App extends Component {
             <Redirect to="/not-found" />
           </Switch>
         </div>
-        <Ad />
       </main>
     );
   }
