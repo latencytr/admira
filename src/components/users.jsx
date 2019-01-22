@@ -18,7 +18,7 @@ class Users extends React.Component {
       users: [],
       dues: [],
       currentPage: 1,
-      pageSize: 4,
+      pageSize: 10,
       searchQuery: "",
       sortColumn: { path: "name", order: "asc" }
     };
