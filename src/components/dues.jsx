@@ -15,7 +15,7 @@ class Dues extends React.Component {
     this.state = {
       dues: [],
       currentPage: 1,
-      pageSize: 8,
+      pageSize: 20,
       searchQuery: "",
       sortColumn: { path: "dueDate", order: "asc" }
     };
