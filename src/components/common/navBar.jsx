@@ -60,7 +60,7 @@ class NavBar extends React.Component {
                       >
                         {user.name}
                       </span>
-                      <div className={`dropdown-menu " + ${dropDownCss}`}>
+                      <div className={`dropdown-menu dropdown-menu-right " + ${dropDownCss}`}>
                         <NavLink
                           className="dropdown-item"
                           to={changePassword}
