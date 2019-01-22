@@ -1,8 +1,10 @@
 import React from "react";
+import { getUsers } from "../services/userService";
 import { getDues, deleteDue } from "../services/dueService";
 import Pagination from "./common/pagination.jsx";
 import { paginate } from "../components/utils/paginate";
 import DuesTable from "./duesTable.jsx";
+import Select from "./common/select.jsx";
 import _ from "lodash";
 import MainLayout from "./common/mainLayout";
 import { toast } from "react-toastify";
@@ -14,6 +16,8 @@ class Dues extends React.Component {
     super();
     this.state = {
       dues: [],
+      users: [],
+      userId: null,
       currentPage: 1,
       pageSize: 20,
       searchQuery: "",
@@ -22,8 +26,9 @@ class Dues extends React.Component {
   }
 
   async componentDidMount() {
+    const { data: users } = await getUsers();
     let { data: dues } = await getDues();
-    this.setState({ dues });
+    this.setState({ users, dues });
   }
 
   handleDelete = async due => {
@@ -49,16 +54,20 @@ class Dues extends React.Component {
     this.setState({ sortColumn });
   };
 
-  handleSearch = query => {
-    this.setState({
-      searchQuery: query,
-      currentPage: 1
-    });
+  handleUserFilter = userId => {
+    this.setState({ userId });
   };
 
   getPagedData = () => {
-    const { pageSize, currentPage, sortColumn, dues: allDues } = this.state;
+    const {
+      pageSize,
+      currentPage,
+      sortColumn,
+      dues: allDues,
+      userId
+    } = this.state;
     let filtered = allDues;
+    if (userId) filtered = allDues.filter(q => q.userId === userId);
     if (this.currentUser && !this.currentUser.isAdmin)
       filtered = allDues.filter(q => q.userId === this.currentUser._id);
     const sorted = _.orderBy(filtered, [sortColumn.path], [sortColumn.order]);
@@ -67,7 +76,7 @@ class Dues extends React.Component {
   };
 
   render() {
-    const { pageSize, currentPage, sortColumn, searchQuery } = this.state;
+    const { pageSize, currentPage, sortColumn, users } = this.state;
     const { totalCount, data: dues } = this.getPagedData();
 
     return (
@@ -78,6 +87,17 @@ class Dues extends React.Component {
               <div className="my-3">
                 Veritabanındaki {totalCount} aidat bilgisi gösteriliyor.
               </div>
+              {this.currentUser && this.currentUser.isAdmin && (
+                <Select
+                  style={{ width: 200 }}
+                  name="userId"
+                  label="Kullanıcı Filtreleme:"
+                  items={users}
+                  onChange={e => {
+                    this.handleUserFilter(e.currentTarget.value);
+                  }}
+                />
+              )}
               <div>
                 <DuesTable
                   dues={dues}
