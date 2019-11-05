@@ -23,7 +23,7 @@
     "bootstrap": "^4.1.3",
     "joi-browser": "^13.4.0",
     "jwt-decode": "^2.2.0",
-    "lodash": "4.17.11",
+    "lodash": ">=4.17.13",
     "raven-js": "^3.27.0",
     "react": "^16.6.3",
     "react-adsense": "0.0.6",
