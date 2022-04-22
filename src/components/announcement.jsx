@@ -20,11 +20,11 @@ class Announcement extends Component {
               <li>
                 <h4>Kapı otomatikleri devreye alındı</h4>
                 <p>
-                  <b>Site giriş için şifremiz:</b> 2580 <br />
+                  <b>Site giriş için şifremiz:</b> 9631 <br />
                   A ve B blok otomatik kapılar devreye alınmıştır. <br />
-                  <b>A Blok Şifresi:</b> 9383
+                  <b>A Blok Şifresi:</b> 1475
                   <br />
-                  <b>B Blok Şifresi:</b> 8393
+                  <b>B Blok Şifresi:</b> 1475
                 </p>
               </li>
             </ul>
